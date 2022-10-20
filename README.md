@@ -62,7 +62,7 @@ docker run -p 8080:8080 springio/spring-todo-app
 
 
 ### URL to access H2 DB locally
-http://localhost:8080/h2-console - for H2 console
+http://localhost:8080/outlaws/h2-console - for H2 console
 
 
 
