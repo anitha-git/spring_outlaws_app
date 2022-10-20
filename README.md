@@ -15,25 +15,43 @@ brew install gradle
 # run maven and start in host os default port 8080
 ./mvnw spring-boot:run
 
+## Test Server status
+http://localhost:8080/outlaws/test
 
-## Postman : Body sample to save
-URL - http://localhost:8080/todos
+## Postman : POST (To Save)
+URL - http://localhost:8080/outlaws/ideas
 ```
 
 {
-  "task_summary": "Summary-1",
-  "task_description": "Desc-1"
+  "ideaSummary": "Summary-3",
+  "ideaDescription": "Desc-3"
 }
 ```
 
-http://localhost:8080 - for application
-
-## Postman : read from h2
-http://localhost:8080/todos/2
+curl -X POST -H "Content-Type: application/json" -d "{\"ideaSummary\":\"XBox 360\",\"ideaDescription\":"299.99"}" http://localhost:8080/outlaws/ideas
 
 
-## Authentication Credentials
-testuser/testpwd
+## Postman : GET 
+http://localhost:8080/outlaws/ideas/
+
+## Postman : GET BY ID
+http://localhost:8080/outlaws/ideas/2
+
+## Postman : PUT (To Update given primary key)
+URL - http://localhost:8080/outlaws/ideas/1
+```
+
+{
+  "ideaSummary": "Summary-333333",
+  "ideaDescription": "Desc-333333"
+}
+```
+
+## Postman : DELETE (delete the given Primary key record)
+http://localhost:8080/outlaws/ideas/2
+
+
+
 
 ## CREATE MAVEN DOCKER IMAGE
 docker build -t springio/spring-todo-app .

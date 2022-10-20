@@ -1,11 +1,10 @@
 package com.aexp.repositories;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.aexp.entities.Idea;
 
-public interface OutlawsRepository extends CrudRepository<Idea, Long> {
-    public Idea findByIdeaSummaryAndIdeaDescriptionAndCreatedByAndUpdatedBy(String ideaSummary, String ideaDescription, String createdBy, String updatedBy);
+public interface OutlawsRepository extends JpaRepository<Idea, Long> {
 
 
 }
